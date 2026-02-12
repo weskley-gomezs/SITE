@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
-  BarChart3, 
+  BarChart, 
   Search, 
   Cpu, 
   Layers,
@@ -24,9 +24,7 @@ import {
   Phone,
   TrendingUp,
   Users,
-  ShieldAlert,
-  BarChart,
-  Target as TargetIcon
+  ShieldAlert
 } from 'lucide-react';
 
 // --- Constants ---
@@ -45,7 +43,7 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id:
   e.preventDefault();
   const element = document.getElementById(id.replace('#', ''));
   if (element) {
-    const offset = 80; // Altura aproximada do navbar fixo
+    const offset = 80; 
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -440,7 +438,7 @@ const App: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-5 mb-16">
                 <PrimaryCTA text="Escalar Estrutura" />
                 <a href="#metodo" onClick={(e) => scrollToSection(e, "#metodo")} className="px-10 py-6 bg-white hover:bg-slate-50 text-slate-950 text-lg font-black rounded-3xl border-2 border-slate-100 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95">
-                   <TargetIcon size={20} className="text-[#EA4335]" /> Ver Método
+                   <Target size={20} className="text-[#EA4335]" /> Ver Método
                 </a>
               </div>
 
@@ -499,7 +497,7 @@ const App: React.FC = () => {
                 <div className="absolute top-0 right-0 p-6 opacity-[0.05] group-hover:opacity-[0.15] group-hover:scale-150 transition-all duration-700">
                   {item.icon}
                 </div>
-                <div className="mb-10 w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900 group-hover:bg-[#EA4335] group-hover:text-white transition-all">
+                <div className="mb-10 w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-950 group-hover:bg-[#EA4335] group-hover:text-white transition-all">
                   {item.icon}
                 </div>
                 <h3 className="text-3xl font-[1000] mb-6 text-slate-950 tracking-tighter leading-tight">{item.title}</h3>
@@ -552,7 +550,7 @@ const App: React.FC = () => {
               { title: "Engenharia de Busca Orgânica (SEO)", text: "Diferente do tráfego pago que para quando o dinheiro acaba, o SEO técnico cria autoridade perpétua no Google para as palavras-chave de intenção.", icon: <Search /> },
               { title: "Sistemas de Predição com IA", text: "Implementamos modelos de IA que analisam leads em tempo real, filtrando curiosos e focando no faturamento real.", icon: <Cpu /> },
               { title: "Arquitetura de Conversão (UX)", text: "Landing pages com foco neuro-científico. Cada pixel é posicionado para reduzir a fricção e acelerar o 'Sim'.", icon: <Layers /> },
-              { title: "Otimização Contínua de ROI", text: "Não entregamos e sumimos. Monitoramos dados técnicos diariamente para garantir que o seu custo por cliente continue caindo.", icon: <BarChart3 /> }
+              { title: "Otimização Contínua de ROI", text: "Não entregamos e sumimos. Monitoramos dados técnicos diariamente para garantir que o seu custo por cliente continue caindo.", icon: <BarChart /> }
             ].map((item, i) => (
               <div key={i} className="p-12 bg-white/5 border border-white/10 rounded-[3rem] hover:bg-white/10 transition-all duration-500 group">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -576,7 +574,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CASE DE SUCESSO: REESTRUTURADO */}
+      {/* CASE DE SUCESSO */}
       <section id="cases" className="py-48 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <SectionHeader 
@@ -587,7 +585,6 @@ const App: React.FC = () => {
           />
           
           <div className="max-w-7xl mx-auto space-y-24">
-            {/* O Problema de Mercado (Contextualização) */}
             <div className="grid lg:grid-cols-2 gap-20 items-center">
                <div className="space-y-8">
                   <div className="flex items-center gap-4 text-[#EA4335] font-black uppercase tracking-widest text-xs">
@@ -615,7 +612,6 @@ const App: React.FC = () => {
                </div>
             </div>
 
-            {/* Estratégia e Resultados (Interpretação) */}
             <div className="bg-slate-950 rounded-[4rem] p-10 md:p-24 text-white relative overflow-hidden">
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] pointer-events-none"></div>
                
@@ -669,7 +665,6 @@ const App: React.FC = () => {
                </div>
             </div>
 
-            {/* Conclusão de Autoridade & CTA Filtro */}
             <div className="max-w-4xl mx-auto text-center space-y-12">
                <h4 className="text-2xl md:text-3xl font-[1000] text-slate-950 tracking-tight">
                   Seu negócio merece um ativo digital, não um ralo de dinheiro.
@@ -743,7 +738,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA FINAL REFORMULADO */}
+      {/* CTA FINAL */}
       <section className="py-48 bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#4285F4]/10 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
