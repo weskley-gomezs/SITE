@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { 
   ArrowRight, 
@@ -6,9 +5,7 @@ import {
   Search, 
   Cpu, 
   Layers,
-  ArrowUpRight,
   AlertTriangle,
-  Sparkles,
   Zap,
   Activity,
   Menu,
@@ -17,12 +14,9 @@ import {
   MousePointerClick,
   ChevronRight,
   ShieldCheck,
-  ExternalLink,
   MessageSquare,
   CheckCircle2,
-  Globe as GlobeIcon,
   Phone,
-  TrendingUp,
   Users,
   ShieldAlert
 } from 'lucide-react';
