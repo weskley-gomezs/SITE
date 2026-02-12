@@ -1,12 +1,14 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   ArrowRight, 
   BarChart3, 
   Search, 
   Cpu, 
   Layers,
+  ArrowUpRight,
   AlertTriangle,
+  Sparkles,
   Zap,
   Activity,
   Menu,
@@ -15,11 +17,16 @@ import {
   MousePointerClick,
   ChevronRight,
   ShieldCheck,
+  ExternalLink,
   MessageSquare,
   CheckCircle2,
+  Globe as GlobeIcon,
   Phone,
+  TrendingUp,
   Users,
-  ShieldAlert
+  ShieldAlert,
+  BarChart,
+  Target as TargetIcon
 } from 'lucide-react';
 
 // --- Constants ---
@@ -33,18 +40,12 @@ interface NavLink {
   href: string;
 }
 
-interface PrimaryCTAProps {
-  text: string;
-  className?: string;
-  icon?: React.ElementType;
-}
-
 // --- Helper Functions ---
 const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
   e.preventDefault();
   const element = document.getElementById(id.replace('#', ''));
   if (element) {
-    const offset = 80; 
+    const offset = 80; // Altura aproximada do navbar fixo
     const bodyRect = document.body.getBoundingClientRect().top;
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
@@ -58,7 +59,7 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id:
 };
 
 // --- Shared Components ---
-const PrimaryCTA: React.FC<PrimaryCTAProps> = ({ text, className = "", icon: Icon = ArrowRight }) => (
+const PrimaryCTA = ({ text, className = "", icon: Icon = ArrowRight }: { text: string, className?: string, icon?: any }) => (
   <a 
     href={WHATSAPP_LINK} 
     target="_blank" 
@@ -72,7 +73,7 @@ const PrimaryCTA: React.FC<PrimaryCTAProps> = ({ text, className = "", icon: Ico
 );
 
 // --- Interactive Globe Component ---
-const InteractiveGlobe: React.FC = () => {
+const InteractiveGlobe = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rotation = useRef({ x: 0.2, y: 0 }); 
   const targetRotation = useRef({ x: 0.2, y: 0 });
@@ -218,7 +219,7 @@ const InteractiveGlobe: React.FC = () => {
              <span className="text-[#4285F4]">Active</span>
            </div>
            <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-[#4285F4] to-[#34A853] w-[75%]"></div>
+              <div className="h-full bg-gradient-to-r from-[#4285F4] to-[#34A853] w-[75%] animate-[shimmer_3s_infinite]"></div>
            </div>
         </div>
       </div>
@@ -231,7 +232,7 @@ const InteractiveGlobe: React.FC = () => {
 };
 
 // --- Navbar Component ---
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -285,8 +286,8 @@ const Navbar: React.FC = () => {
                <div className="absolute w-1.5 h-6 bg-[#34A853] rounded-full" style={{ transform: 'rotate(270deg) translateY(-8px)' }}></div>
             </div>
 
-            <div className="flex flex-col -space-y-1 text-slate-950">
-              <span className="text-xl font-[1000] tracking-tighter uppercase">
+            <div className="flex flex-col -space-y-1">
+              <span className="text-xl font-[1000] tracking-tighter text-slate-950 uppercase">
                 Wekley<span className="text-[#4285F4]">Gomes</span>
               </span>
               <span className="text-[9px] font-black tracking-[0.4em] text-slate-400 uppercase">Engineered Growth</span>
@@ -378,7 +379,7 @@ const Navbar: React.FC = () => {
   );
 };
 
-const SectionHeader: React.FC<{ badge: string, title: string, subtitle?: string, centered?: boolean, color?: string, isDark?: boolean }> = ({ badge, title, subtitle, centered = true, color = "#4285F4", isDark = false }) => (
+const SectionHeader = ({ badge, title, subtitle, centered = true, color = "#4285F4", isDark = false }: { badge: string, title: string, subtitle?: string, centered?: boolean, color?: string, isDark?: boolean }) => (
   <div className={`${centered ? 'text-center' : 'text-left'} max-w-4xl ${centered ? 'mx-auto' : ''} mb-24`}>
     <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.25em] mb-10 border shadow-sm transition-transform hover:scale-105 cursor-default" 
          style={{ backgroundColor: `${color}10`, color: color, borderColor: `${color}30` }}>
@@ -439,7 +440,7 @@ const App: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-5 mb-16">
                 <PrimaryCTA text="Escalar Estrutura" />
                 <a href="#metodo" onClick={(e) => scrollToSection(e, "#metodo")} className="px-10 py-6 bg-white hover:bg-slate-50 text-slate-950 text-lg font-black rounded-3xl border-2 border-slate-100 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95">
-                   <Target size={20} className="text-[#EA4335]" /> Ver Método
+                   <TargetIcon size={20} className="text-[#EA4335]" /> Ver Método
                 </a>
               </div>
 
@@ -575,7 +576,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CASE DE SUCESSO */}
+      {/* CASE DE SUCESSO: REESTRUTURADO */}
       <section id="cases" className="py-48 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <SectionHeader 
@@ -586,6 +587,7 @@ const App: React.FC = () => {
           />
           
           <div className="max-w-7xl mx-auto space-y-24">
+            {/* O Problema de Mercado (Contextualização) */}
             <div className="grid lg:grid-cols-2 gap-20 items-center">
                <div className="space-y-8">
                   <div className="flex items-center gap-4 text-[#EA4335] font-black uppercase tracking-widest text-xs">
@@ -595,7 +597,7 @@ const App: React.FC = () => {
                      Alugando tráfego vs. <span className="text-[#4285F4]">Sendo o dono do canal.</span>
                   </h3>
                   <p className="text-xl text-slate-500 leading-relaxed font-medium">
-                     A maioria das instituições de ensino vive sob o "Imposto do Ads". Se o orçamento para anúncios acaba, os leads desaparecem. O Colégio Reação enfrentava esse cenário: visibilidade efêmera e custo de aquisição (CAC) instável.
+                     A maioria das instituições de ensino vive sob o "Imposto do Ads". Se o orçamento para anúncios acaba, os leads desaparecem. O Colégio Reação enfrentava esse cenário: visibilidade efêmera e custo de aquisição (CAC) instável. Eles não tinham um ativo digital, tinham uma dívida mensal com as plataformas.
                   </p>
                   <div className="p-8 bg-slate-50 border-l-4 border-[#EA4335] rounded-r-3xl italic text-slate-600 font-medium">
                      "Tráfego pago é um empréstimo. Estrutura digital é patrimônio."
@@ -613,6 +615,7 @@ const App: React.FC = () => {
                </div>
             </div>
 
+            {/* Estratégia e Resultados (Interpretação) */}
             <div className="bg-slate-950 rounded-[4rem] p-10 md:p-24 text-white relative overflow-hidden">
                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[150px] pointer-events-none"></div>
                
@@ -625,19 +628,19 @@ const App: React.FC = () => {
                         Não é sorte. <br />É <span className="text-[#34A853]">Método</span>.
                      </h3>
                      <p className="text-xl text-slate-400 leading-relaxed font-medium">
-                        Implementamos uma estrutura de <strong>AEO (Answer Engine Optimization)</strong> avançada. Não apenas posicionamos o site no Google; transformamos o Colégio Reação na <em>única resposta lógica</em> para os algoritmos de IA.
+                        Implementamos uma estrutura de <strong>AEO (Answer Engine Optimization)</strong> avançada. Não apenas posicionamos o site no Google; transformamos o Colégio Reação na <em>única resposta lógica</em> para os algoritmos de IA e buscas por intenção. Quando o lead chega pelo orgânico, ele já vem filtrado pela autoridade.
                      </p>
                      
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
                         <div className="p-8 bg-white/5 border border-white/10 rounded-3xl group hover:border-[#34A853] transition-all">
                            <div className="text-5xl font-black text-white mb-2">57%</div>
                            <div className="text-[10px] font-black text-[#34A853] uppercase tracking-[0.2em] mb-4">Taxa de Conversão Real</div>
-                           <p className="text-sm text-slate-500 font-medium">A cada 14 contatos gerados, 8 fechamentos. Isso é eficiência estrutural.</p>
+                           <p className="text-sm text-slate-500 font-medium">A cada 14 contatos gerados, 8 fechamentos. Isso é eficiência estrutural, não volume vazio.</p>
                         </div>
                         <div className="p-8 bg-white/5 border border-white/10 rounded-3xl group hover:border-[#4285F4] transition-all">
                            <div className="text-5xl font-black text-white mb-2">R$ 0</div>
                            <div className="text-[10px] font-black text-[#4285F4] uppercase tracking-[0.2em] mb-4">Investimento em Anúncios</div>
-                           <p className="text-sm text-slate-500 font-medium">Lucro líquido preservado. A estrutura paga a si mesma.</p>
+                           <p className="text-sm text-slate-500 font-medium">Lucro líquido preservado. A estrutura paga a si mesma e gera ROI infinito a longo prazo.</p>
                         </div>
                      </div>
                   </div>
@@ -657,7 +660,7 @@ const App: React.FC = () => {
                               <span>Crítica / Alta</span>
                            </div>
                            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                              <div className="h-full bg-[#34A853] w-[88%]"></div>
+                              <div className="h-full bg-[#34A853] w-[88%] animate-pulse"></div>
                            </div>
                         </div>
                         <img src="https://i.imgur.com/eVuz1HU.png" alt="Analytics Graph" className="w-full h-auto rounded-xl opacity-80 hover:opacity-100 transition-opacity" />
@@ -666,10 +669,14 @@ const App: React.FC = () => {
                </div>
             </div>
 
+            {/* Conclusão de Autoridade & CTA Filtro */}
             <div className="max-w-4xl mx-auto text-center space-y-12">
                <h4 className="text-2xl md:text-3xl font-[1000] text-slate-950 tracking-tight">
                   Seu negócio merece um ativo digital, não um ralo de dinheiro.
                </h4>
+               <p className="text-lg text-slate-500 font-medium leading-relaxed">
+                  Este resultado não é replicável por "designer de sites" ou "agência de tráfego". É fruto de engenharia de busca e processos de conversão. <strong>Eu não aceito todos os projetos.</strong> Filtro apenas empresas com potencial de dominância setorial.
+               </p>
                <div className="pt-8">
                   <PrimaryCTA text="Agendar Diagnóstico de Viabilidade" className="bg-[#34A853] shadow-[0_30px_60px_-15px_rgba(52,168,83,0.4)] px-16" />
                   <p className="mt-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Somente 3 vagas para novos ativos este mês.</p>
@@ -713,7 +720,7 @@ const App: React.FC = () => {
             ].map((item, i) => (
               <div key={i} className="group relative flex flex-col md:flex-row gap-10 p-12 bg-slate-50 rounded-[3rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 overflow-hidden">
                  <div className="absolute top-0 right-0 p-8 text-8xl font-[1000] text-slate-100 opacity-50 select-none">{item.step}</div>
-                 <div className="relative z-10 w-20 h-20 rounded-[2rem] bg-slate-900 text-white flex items-center justify-center text-3xl font-black shrink-0 group-hover:bg-slate-700 transition-colors">
+                 <div className="relative z-10 w-20 h-20 rounded-[2rem] bg-slate-900 text-white flex items-center justify-center text-3xl font-black shrink-0 group-hover:bg-[#FBBC05] transition-colors">
                     {item.step}
                  </div>
                  <div className="relative z-10 flex-1">
@@ -736,7 +743,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* CTA FINAL REFORMULADO */}
       <section className="py-48 bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#4285F4]/10 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
