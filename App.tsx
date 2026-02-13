@@ -23,7 +23,7 @@ import {
 
 // --- Constants ---
 const WHATSAPP_NUMBER = "5561981535040";
-const WHATSAPP_MSG = encodeURIComponent("Olá Wekley, vim pelo seu site e gostaria de agendar um diagnóstico estratégico para minha empresa.");
+const WHATSAPP_MSG = encodeURIComponent("Olá Weskley, vim pelo seu site e gostaria de agendar um diagnóstico estratégico para minha empresa.");
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
 // --- Interfaces ---
@@ -280,7 +280,7 @@ const Navbar = () => {
 
             <div className="flex flex-col -space-y-1">
               <span className="text-xl font-[1000] tracking-tighter text-slate-950 uppercase">
-                Wekley<span className="text-[#4285F4]">Gomes</span>
+                Weskley<span className="text-[#4285F4]">Gomes</span>
               </span>
               <span className="text-[9px] font-black tracking-[0.4em] text-slate-400 uppercase">Engineered Growth</span>
             </div>
@@ -333,7 +333,7 @@ const Navbar = () => {
             className="relative z-10 p-10 h-full flex flex-col overflow-y-auto"
           >
             <div className="flex justify-between items-center mb-20">
-              <span className="text-2xl font-[1000] tracking-tighter text-white uppercase">Wekley<span className="text-[#4285F4]">Gomes</span></span>
+              <span className="text-2xl font-[1000] tracking-tighter text-white uppercase">Weskley<span className="text-[#4285F4]">Gomes</span></span>
               <button onClick={() => setMobileMenuOpen(false)} className="p-3 bg-white/10 rounded-2xl text-white hover:bg-white/20 transition-colors"><X size={24} /></button>
             </div>
             
@@ -764,7 +764,7 @@ const App: React.FC = () => {
       <div className="bg-slate-950 py-12 border-t border-white/5">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
            <div className="flex items-center gap-4">
-              <span className="text-xl font-[1000] tracking-tighter text-white uppercase">Wekley<span className="text-[#4285F4]">Gomes</span></span>
+              <span className="text-xl font-[1000] tracking-tighter text-white uppercase">Weskley<span className="text-[#4285F4]">Gomes</span></span>
            </div>
            <p className="text-[11px] font-black text-slate-500 uppercase tracking-[0.4em]">© 2026 | High-End Digital Strategy</p>
         </div>
