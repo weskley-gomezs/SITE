@@ -23,7 +23,7 @@ import {
 
 // --- Constants ---
 const WHATSAPP_NUMBER = "5561981535040";
-const WHATSAPP_MSG = encodeURIComponent("Olá Weskley, vim pelo seu site e gostaria de agendar um diagnóstico estratégico para minha empresa.");
+const WHATSAPP_MSG = encodeURIComponent("Hello Weskley, I came from your website and would like to schedule a strategic diagnosis for my company.");
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
 
 // --- Interfaces ---
@@ -247,10 +247,10 @@ const Navbar = () => {
   };
 
   const navLinks: NavLink[] = [
-    { name: "O Abismo", href: "#problema" },
-    { name: "A Estrutura", href: "#solucao" },
+    { name: "The Abyss", href: "#problem" },
+    { name: "The Structure", href: "#solution" },
     { name: "Cases", href: "#cases" },
-    { name: "Protocolos", href: "#metodo" },
+    { name: "Protocols", href: "#method" },
   ];
 
   return (
@@ -282,7 +282,7 @@ const Navbar = () => {
               <span className="text-xl font-[1000] tracking-tighter text-slate-950 uppercase">
                 Weskley<span className="text-[#4285F4]">Gomes</span>
               </span>
-              <span className="text-[9px] font-black tracking-[0.4em] text-slate-400 uppercase">Engineered Growth</span>
+              <span className="text-[9px] font-black tracking-[0.4em] text-slate-400 uppercase">Digital Structure Specialist</span>
             </div>
           </a>
 
@@ -302,7 +302,7 @@ const Navbar = () => {
             </div>
             <div className="h-6 w-[1px] bg-slate-200"></div>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="relative overflow-hidden bg-slate-950 text-white px-8 py-4 rounded-2xl font-black text-[11px] uppercase tracking-widest transition-all duration-300 hover:shadow-[0_10px_30px_-10px_rgba(15,23,42,0.5)] active:scale-95 group">
-              <span className="relative z-10 flex items-center gap-2">Agendar Diagnóstico <ChevronRight size={14} /></span>
+              <span className="relative z-10 flex items-center gap-2">Book Strategy Call <ChevronRight size={14} /></span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#4285F4] to-[#EA4335] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </a>
           </div>
@@ -358,7 +358,7 @@ const Navbar = () => {
 
             <div className="mt-auto pt-20 space-y-8">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-full block text-center py-8 bg-[#EA4335] text-white font-black text-sm uppercase tracking-[0.2em] rounded-3xl shadow-2xl active:scale-95 transition-all">
-                Escalar Agora
+                Scale Now
               </a>
               <div className="flex justify-center gap-10">
                 <MessageSquare size={24} className="text-slate-500 hover:text-white transition-colors cursor-pointer" />
@@ -402,7 +402,7 @@ const App: React.FC = () => {
         className="fixed bottom-8 right-8 z-[150] flex items-center justify-center w-16 h-16 bg-[#34A853] text-white rounded-full shadow-[0_20px_40px_rgba(52,168,83,0.4)] hover:scale-110 active:scale-95 transition-all animate-bounce group"
       >
         <Phone size={28} className="fill-current" />
-        <span className="absolute right-full mr-4 px-4 py-2 bg-slate-950 text-white text-[10px] font-black uppercase tracking-widest rounded-xl opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none">Fale com o Estrategista</span>
+        <span className="absolute right-full mr-4 px-4 py-2 bg-slate-950 text-white text-[10px] font-black uppercase tracking-widest rounded-xl opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none">Talk to the Specialist</span>
       </a>
 
       {/* HERO SECTION */}
@@ -422,17 +422,20 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 relative">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
             <div className="relative z-20">
+              <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#4285F4]/10 rounded-xl text-[#4285F4] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border border-[#4285F4]/20 animate-float">
+                <ShieldCheck size={14} /> Digital Structure Specialist
+              </div>
               <h1 className="text-5xl md:text-[clamp(48px,8vw,84px)] font-[1000] mb-8 leading-[1.02] tracking-tighter text-slate-950">
-                Saia da <span className="text-slate-300 italic block sm:inline">esperança</span> e entre na <span className="relative inline-block text-[#4285F4]">previsibilidade.<div className="absolute bottom-2 md:bottom-4 left-0 w-full h-3 md:h-4 bg-[#4285F4]/10 -z-10"></div></span>
+                Move from <span className="text-slate-300 italic block sm:inline">hope</span> to <span className="relative inline-block text-[#4285F4]">predictability.<div className="absolute bottom-2 md:bottom-4 left-0 w-full h-3 md:h-4 bg-[#4285F4]/10 -z-10"></div></span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-500 mb-12 max-w-xl leading-relaxed font-medium">
-                Sua empresa fatura, mas sua estrutura digital é um deserto técnico. Eu construo o <strong className="text-slate-900">ecossistema</strong> que transforma buscas em lucro real.
+                Your company generates revenue, but your digital structure is a technical desert. I build the <strong className="text-slate-900">ecosystem</strong> that transforms searches into real profit.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-5 mb-16">
-                <PrimaryCTA text="Escalar Estrutura" />
-                <a href="#metodo" onClick={(e) => scrollToSection(e, "#metodo")} className="px-10 py-6 bg-white hover:bg-slate-50 text-slate-950 text-lg font-black rounded-3xl border-2 border-slate-100 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95">
-                   <Target size={20} className="text-[#EA4335]" /> Ver Método
+                <PrimaryCTA text="Scale Structure" />
+                <a href="#method" onClick={(e) => scrollToSection(e, "#method")} className="px-10 py-6 bg-white hover:bg-slate-50 text-slate-950 text-lg font-black rounded-3xl border-2 border-slate-100 transition-all flex items-center justify-center gap-3 shadow-sm active:scale-95">
+                   <Target size={20} className="text-[#EA4335]" /> View Method
                 </a>
               </div>
 
@@ -461,30 +464,30 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* PROBLEMA SECTION */}
-      <section id="problema" className="py-40 bg-slate-50 relative">
+      {/* PROBLEM SECTION */}
+      <section id="problem" className="py-40 bg-slate-50 relative">
         <div className="container mx-auto px-6">
-          <SectionHeader badge="O Diagnóstico Amargo" title="Você está financiando o seu concorrente." subtitle="Se o seu potencial cliente pesquisa no Google e encontra o seu concorrente antes de você, sua empresa está sangrando capital e oportunidade." color="#EA4335" />
+          <SectionHeader badge="The Bitter Diagnosis" title="You are funding your competitor." subtitle="If your potential customer searches on Google and finds your competitor before you, your company is bleeding capital and opportunity." color="#EA4335" />
           
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-20">
             {[
               { 
                 icon: <AlertTriangle size={36} />, 
-                title: "Invisibilidade Técnica", 
-                desc: "Não basta ter um site. Se o algoritmo do Google não entende sua autoridade técnica, você não existe para o mercado.",
-                label: "Média de Perda: 64%"
+                title: "Technical Invisibility", 
+                desc: "It's not enough to have a website. If Google's algorithm doesn't understand your technical authority, you don't exist for the market.",
+                label: "Average Loss: 64%"
               },
               { 
                 icon: <MousePointerClick size={36} />, 
-                title: "Funil de Esperança", 
-                desc: "Depender de indicação ou posts aleatórios é amadorismo. Negócios sérios dependem de estruturas de conversão previsíveis.",
-                label: "Inconsistência: Crítica"
+                title: "Hope Funnel", 
+                desc: "Relying on referrals or random posts is amateurish. Serious businesses depend on predictable conversion structures.",
+                label: "Inconsistency: Critical"
               },
               { 
                 icon: <Activity size={36} />, 
-                title: "Escassez de Dados", 
-                desc: "Você toma decisões no 'feeling'. Enquanto isso, a IA que implemento analisa comportamentos para reduzir seu custo de aquisição.",
-                label: "CAC Atual: Ineficiente"
+                title: "Data Scarcity", 
+                desc: "You make decisions based on 'feeling'. Meanwhile, the AI I implement analyzes behaviors to reduce your acquisition cost.",
+                label: "Current CAC: Inefficient"
               }
             ].map((item, idx) => (
               <div key={idx} className="group relative bg-white p-12 rounded-[2.5rem] border border-slate-200 transition-all duration-500 hover:border-[#EA4335] hover:shadow-[0_40px_80px_-20px_rgba(234,67,53,0.15)] overflow-hidden">
@@ -507,8 +510,8 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex flex-col items-center gap-8">
-            <p className="text-slate-400 font-black uppercase tracking-[0.2em] text-[11px]">Você identificou um desses problemas? O próximo passo é o diagnóstico.</p>
-            <PrimaryCTA text="Diagnosticar meu Negócio Agora" className="bg-[#EA4335] shadow-[0_20px_50px_-10px_rgba(234,67,53,0.3)]" />
+            <p className="text-slate-400 font-black uppercase tracking-[0.2em] text-[11px]">Identified one of these problems? The next step is the diagnosis.</p>
+            <PrimaryCTA text="Diagnose my Business Now" className="bg-[#EA4335] shadow-[0_20px_50px_-10px_rgba(234,67,53,0.3)]" />
           </div>
         </div>
       </section>
@@ -533,18 +536,18 @@ const App: React.FC = () => {
          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
       </section>
 
-      {/* SOLUÇÃO */}
-      <section id="solucao" className="py-40 bg-slate-950 text-white overflow-hidden relative">
+      {/* SOLUTION */}
+      <section id="solution" className="py-40 bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute inset-0 bg-blue-600/5 blur-[120px] pointer-events-none"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <SectionHeader badge="A Estrutura de Elite" title="Construímos ativos, não apenas campanhas." subtitle="Uma estrutura digital robusta é o único diferencial competitivo que não pode ser copiado em 24 horas." isDark={true} color="#4285F4" />
+          <SectionHeader badge="The Elite Structure" title="We build assets, not just campaigns." subtitle="A robust digital structure is the only competitive advantage that cannot be copied in 24 hours." isDark={true} color="#4285F4" />
           
           <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto mb-24">
             {[
-              { title: "Engenharia de Busca Orgânica (SEO)", text: "Diferente do tráfego pago que para quando o dinheiro acaba, o SEO técnico cria autoridade perpétua no Google para as palavras-chave de intenção.", icon: <Search /> },
-              { title: "Sistemas de Predição com IA", text: "Implementamos modelos de IA que analisam leads em tempo real, filtrando curiosos e focando no faturamento real.", icon: <Cpu /> },
-              { title: "Arquitetura de Conversão (UX)", text: "Landing pages com foco neuro-científico. Cada pixel é posicionado para reduzir a fricção e acelerar o 'Sim'.", icon: <Layers /> },
-              { title: "Otimização Contínua de ROI", text: "Não entregamos e sumimos. Monitoramos dados técnicos diariamente para garantir que o seu custo por cliente continue caindo.", icon: <BarChart /> }
+              { title: "Organic Search Engineering (SEO)", text: "Unlike paid traffic that stops when the money runs out, technical SEO creates perpetual authority on Google for intent keywords.", icon: <Search /> },
+              { title: "AI Prediction Systems", text: "We implement AI models that analyze leads in real-time, filtering out curious onlookers and focusing on actual revenue.", icon: <Cpu /> },
+              { title: "Conversion Architecture (UX)", text: "Landing pages with a neuro-scientific focus. Every pixel is positioned to reduce friction and accelerate the 'Yes'.", icon: <Layers /> },
+              { title: "Continuous ROI Optimization", text: "We don't just deliver and disappear. We monitor technical data daily to ensure your cost per customer keeps falling.", icon: <BarChart /> }
             ].map((item, i) => (
               <div key={i} className="p-12 bg-white/5 border border-white/10 rounded-[3rem] hover:bg-white/10 transition-all duration-500 group">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -562,19 +565,19 @@ const App: React.FC = () => {
 
           <div className="flex flex-col items-center gap-10">
             <div className="w-24 h-[1px] bg-white/10"></div>
-            <p className="text-xl md:text-2xl font-medium text-slate-400 max-w-2xl text-center">Interessado em implementar essa estrutura no seu negócio? Comece com uma análise técnica gratuita.</p>
-            <PrimaryCTA text="Implementar esta Estrutura" className="bg-white text-slate-950 shadow-[0_20px_50px_-10px_rgba(255,255,255,0.1)]" />
+            <p className="text-xl md:text-2xl font-medium text-slate-400 max-w-2xl text-center">Interested in implementing this structure in your business? Start with a free technical analysis.</p>
+            <PrimaryCTA text="Implement this Structure" className="bg-white text-slate-950 shadow-[0_20px_50px_-10px_rgba(255,255,255,0.1)]" />
           </div>
         </div>
       </section>
 
-      {/* CASE DE SUCESSO */}
+      {/* SUCCESS CASE */}
       <section id="cases" className="py-48 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <SectionHeader 
-            badge="Case de Autoridade" 
-            title="Dominância Estrutural: Quando o Orgânico Converte Mais que o Pago." 
-            subtitle="Como transformamos o Colégio Reação em uma autoridade inquestionável no Google, gerando fechamentos reais sem investir um único real em anúncios." 
+            badge="Authority Case" 
+            title="Structural Dominance: When Organic Converts Better Than Paid." 
+            subtitle="How we transformed Colégio Reação into an unquestionable authority on Google, generating real closures without investing a single dollar in ads." 
             color="#34A853" 
           />
           
@@ -582,16 +585,16 @@ const App: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-20 items-center">
                <div className="space-y-8">
                   <div className="flex items-center gap-4 text-[#EA4335] font-black uppercase tracking-widest text-xs">
-                     <ShieldAlert size={20} /> O Abismo da Dependência
+                     <ShieldAlert size={20} /> The Dependency Abyss
                   </div>
                   <h3 className="text-4xl md:text-5xl font-[1000] text-slate-950 tracking-tighter leading-tight">
-                     Alugando tráfego vs. <span className="text-[#4285F4]">Sendo o dono do canal.</span>
+                     Renting traffic vs. <span className="text-[#4285F4]">Owning the channel.</span>
                   </h3>
                   <p className="text-xl text-slate-500 leading-relaxed font-medium">
-                     A maioria das instituições de ensino vive sob o "Imposto do Ads". Se o orçamento para anúncios acaba, os leads desaparecem. O Colégio Reação enfrentava esse cenário: visibilidade efêmera e custo de aquisição (CAC) instável. Eles não tinham um ativo digital, tinham uma dívida mensal com as plataformas.
+                     Most educational institutions live under the "Ads Tax". If the ad budget runs out, leads disappear. Colégio Reação faced this scenario: ephemeral visibility and unstable acquisition cost (CAC). They didn't have a digital asset; they had a monthly debt with platforms.
                   </p>
                   <div className="p-8 bg-slate-50 border-l-4 border-[#EA4335] rounded-r-3xl italic text-slate-600 font-medium">
-                     "Tráfego pago é um empréstimo. Estrutura digital é patrimônio."
+                     "Paid traffic is a loan. Digital structure is equity."
                   </div>
                </div>
                <div className="relative group">
@@ -612,25 +615,25 @@ const App: React.FC = () => {
                <div className="grid lg:grid-cols-12 gap-16 relative z-10">
                   <div className="lg:col-span-7 space-y-12">
                      <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/5 rounded-full text-[10px] font-black uppercase tracking-widest text-[#34A853]">
-                        <Zap size={14} /> Engenharia de Resposta (AEO)
+                        <Zap size={14} /> Answer Engineering (AEO)
                      </div>
                      <h3 className="text-4xl md:text-6xl font-[1000] tracking-tighter leading-[0.95]">
-                        Não é sorte. <br />É <span className="text-[#34A853]">Método</span>.
+                        It's not luck. <br />It's <span className="text-[#34A853]">Method</span>.
                      </h3>
                      <p className="text-xl text-slate-400 leading-relaxed font-medium">
-                        Implementamos uma estrutura de <strong>AEO (Answer Engine Optimization)</strong> avançada. Não apenas posicionamos o site no Google; transformamos o Colégio Reação na <em>única resposta lógica</em> para os algoritmos de IA e buscas por intenção. Quando o lead chega pelo orgânico, ele já vem filtrado pela autoridade.
+                        We implemented an advanced <strong>AEO (Answer Engine Optimization)</strong> structure. We don't just position the site on Google; we transform Colégio Reação into the <em>only logical answer</em> for AI algorithms and intent searches. When the lead arrives organically, they are already filtered by authority.
                      </p>
                      
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
                         <div className="p-8 bg-white/5 border border-white/10 rounded-3xl group hover:border-[#34A853] transition-all">
                            <div className="text-5xl font-black text-white mb-2">57%</div>
-                           <div className="text-[10px] font-black text-[#34A853] uppercase tracking-[0.2em] mb-4">Taxa de Conversão Real</div>
-                           <p className="text-sm text-slate-500 font-medium">A cada 14 contatos gerados, 8 fechamentos. Isso é eficiência estrutural, não volume vazio.</p>
+                           <div className="text-[10px] font-black text-[#34A853] uppercase tracking-[0.2em] mb-4">Real Conversion Rate</div>
+                           <p className="text-sm text-slate-500 font-medium">For every 14 contacts generated, 8 closures. This is structural efficiency, not empty volume.</p>
                         </div>
                         <div className="p-8 bg-white/5 border border-white/10 rounded-3xl group hover:border-[#4285F4] transition-all">
-                           <div className="text-5xl font-black text-white mb-2">R$ 0</div>
-                           <div className="text-[10px] font-black text-[#4285F4] uppercase tracking-[0.2em] mb-4">Investimento em Anúncios</div>
-                           <p className="text-sm text-slate-500 font-medium">Lucro líquido preservado. A estrutura paga a si mesma e gera ROI infinito a longo prazo.</p>
+                           <div className="text-5xl font-black text-white mb-2">$ 0</div>
+                           <div className="text-[10px] font-black text-[#4285F4] uppercase tracking-[0.2em] mb-4">Ad Investment</div>
+                           <p className="text-sm text-slate-500 font-medium">Net profit preserved. The structure pays for itself and generates infinite ROI in the long run.</p>
                         </div>
                      </div>
                   </div>
@@ -640,14 +643,14 @@ const App: React.FC = () => {
                         <div className="flex items-center gap-4">
                            <Users className="text-[#34A853]" size={32} />
                            <div>
-                              <div className="text-2xl font-black text-white">8/14 Fechamentos</div>
-                              <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Performance de Vendas</div>
+                              <div className="text-2xl font-black text-white">8/14 Closures</div>
+                              <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Sales Performance</div>
                            </div>
                         </div>
                         <div className="space-y-4">
                            <div className="flex justify-between text-[11px] font-black text-white uppercase tracking-widest">
-                              <span>Intenção do Lead</span>
-                              <span>Crítica / Alta</span>
+                              <span>Lead Intent</span>
+                              <span>Critical / High</span>
                            </div>
                            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                               <div className="h-full bg-[#34A853] w-[88%] animate-pulse"></div>
@@ -661,49 +664,49 @@ const App: React.FC = () => {
 
             <div className="max-w-4xl mx-auto text-center space-y-12">
                <h4 className="text-2xl md:text-3xl font-[1000] text-slate-950 tracking-tight">
-                  Seu negócio merece um ativo digital, não um ralo de dinheiro.
+                  Your business deserves a digital asset, not a money drain.
                </h4>
                <p className="text-lg text-slate-500 font-medium leading-relaxed">
-                  Este resultado não é replicável por "designer de sites" ou "agência de tráfego". É fruto de engenharia de busca e processos de conversão. <strong>Eu não aceito todos os projetos.</strong> Filtro apenas empresas com potencial de dominância setorial.
+                  This result is not replicable by a "website designer" or a "traffic agency". It is the result of search engineering and conversion processes. <strong>I don't accept all projects.</strong> I only filter companies with potential for sector dominance.
                </p>
                <div className="pt-8">
-                  <PrimaryCTA text="Agendar Diagnóstico de Viabilidade" className="bg-[#34A853] shadow-[0_30px_60px_-15px_rgba(52,168,83,0.4)] px-16" />
-                  <p className="mt-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Somente 3 vagas para novos ativos este mês.</p>
+                  <PrimaryCTA text="Schedule Feasibility Diagnosis" className="bg-[#34A853] shadow-[0_30px_60px_-15px_rgba(52,168,83,0.4)] px-16" />
+                  <p className="mt-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Only 3 slots for new assets this month.</p>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* METODO / PROTOCOLOS */}
-      <section id="metodo" className="py-48 bg-white overflow-hidden">
+      {/* METHOD / PROTOCOLS */}
+      <section id="method" className="py-48 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
-          <SectionHeader badge="Protocolos Técnicos" title="O caminho para o faturamento previsível." subtitle="Quatro fases rigorosas de engenharia para transformar seu posicionamento." color="#FBBC05" />
+          <SectionHeader badge="Technical Protocols" title="The path to predictable revenue." subtitle="Four rigorous engineering phases to transform your positioning." color="#FBBC05" />
           
           <div className="max-w-5xl mx-auto space-y-6 mb-24">
             {[
               { 
                 step: "01", 
-                title: "Auditoria de Fluxo e Ativos", 
-                desc: "Analisamos cada ponto cego da sua estrutura atual. Onde o dinheiro está escorrendo?",
+                title: "Flow and Asset Audit", 
+                desc: "We analyze every blind spot in your current structure. Where is the money leaking?",
                 tech: "Heatmaps, Core Web Vitals, Data Mapping"
               },
               { 
                 step: "02", 
-                title: "Arquitetura Blueprint", 
-                desc: "Desenhamos o mapa de guerra: palavras-chave, jornada do usuário e integração de IA.",
+                title: "Blueprint Architecture", 
+                desc: "We design the war map: keywords, user journey, and AI integration.",
                 tech: "Intent Mapping, AI Logic Flow, UX Strategy"
               },
               { 
                 step: "03", 
-                title: "Implementação em Escala", 
-                desc: "Ativamos os motores. Construção técnica, rastreio avançado e ativação de algoritmos.",
+                title: "Scale Implementation", 
+                desc: "We activate the engines. Technical construction, advanced tracking, and algorithm activation.",
                 tech: "GTM Server Side, Ads Integration, CRM Sync"
               },
               { 
                 step: "04", 
                 title: "Data-Driven Scaling", 
-                desc: "Acompanhamento cirúrgico dos dados para aumentar o investimento apenas no que traz lucro.",
+                desc: "Surgical monitoring of data to increase investment only in what brings profit.",
                 tech: "Conversion Rate Optimization, ROI Dashboards"
               }
             ].map((item, i) => (
@@ -726,35 +729,35 @@ const App: React.FC = () => {
           </div>
 
           <div className="text-center">
-            <h4 className="text-2xl font-[1000] text-slate-950 mb-8 tracking-tight">Pronto para iniciar o Passo 1?</h4>
-            <PrimaryCTA text="Agendar Passo 1: Diagnóstico" className="bg-[#4285F4] shadow-[0_20px_50px_-10px_rgba(66,133,244,0.3)]" />
+            <h4 className="text-2xl font-[1000] text-slate-950 mb-8 tracking-tight">Ready to start Step 1?</h4>
+            <PrimaryCTA text="Schedule Step 1: Diagnosis" className="bg-[#4285F4] shadow-[0_20px_50px_-10px_rgba(66,133,244,0.3)]" />
           </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* FINAL CTA */}
       <section className="py-48 bg-slate-950 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#4285F4]/10 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-5xl mx-auto">
              <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-[11px] font-black uppercase tracking-[0.3em] mb-12 text-[#FBBC05]">
-                <ShieldCheck size={16} /> Diagnóstico Exclusivo
+                <ShieldCheck size={16} /> Exclusive Diagnosis
              </div>
              <h2 className="text-6xl md:text-9xl font-[1000] text-white mb-12 leading-[0.85] tracking-tighter">
-                Construa sua <span className="text-[#4285F4]">máquina</span> hoje.
+                Build your <span className="text-[#4285F4]">machine</span> today.
              </h2>
              <p className="text-2xl md:text-3xl text-slate-400 mb-20 font-medium leading-relaxed max-w-4xl mx-auto">
-                Não sou uma agência. Sou um estrategista. Escolho apenas <strong className="text-white">3 novos projetos</strong> por mês para garantir faturamento real.
+                I'm not an agency. I'm a specialist. I choose only <strong className="text-white">3 new projects</strong> per month to ensure real revenue.
              </p>
              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="group relative px-16 py-10 bg-[#EA4335] text-white text-2xl font-black rounded-[2.5rem] transition-all shadow-[0_40px_100px_-20px_rgba(234,67,53,0.4)] flex items-center justify-center gap-6 mx-auto active:scale-95">
-                Quero meu Diagnóstico Estratégico <ArrowRight className="group-hover:translate-x-4 transition-transform" />
+                I want my Strategic Diagnosis <ArrowRight className="group-hover:translate-x-4 transition-transform" />
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
              </a>
              
              <div className="mt-20 flex flex-col md:flex-row justify-center items-center gap-10 text-slate-500">
-                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> 100% Personalizado</div>
-                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> Dados Transparentes</div>
-                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> Foco em Escala de ROI</div>
+                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> 100% Personalized</div>
+                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> Transparent Data</div>
+                <div className="flex items-center gap-3"><CheckCircle2 size={20} className="text-[#34A853]" /> Focus on ROI Scaling</div>
              </div>
           </div>
         </div>
@@ -764,7 +767,9 @@ const App: React.FC = () => {
       <div className="bg-slate-950 py-12 border-t border-white/5">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
            <div className="flex items-center gap-4">
-              <span className="text-xl font-[1000] tracking-tighter text-white uppercase">Weskley<span className="text-[#4285F4]">Gomes</span></span>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-xl font-[1000] tracking-tighter text-white uppercase hover:text-slate-200 transition-colors">
+                Weskley<span className="text-[#4285F4]">Gomes</span>
+              </a>
            </div>
            <p className="text-[11px] font-black text-slate-500 uppercase tracking-[0.4em]">© 2026 | High-End Digital Strategy</p>
         </div>
